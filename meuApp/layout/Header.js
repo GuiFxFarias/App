@@ -13,7 +13,7 @@ const statusBarHeight = StatusBar.currentHeight
   ? StatusBar.currentHeight + 15
   : 30;
 
-export default function Header({name}) {
+export default function Header({ name }) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
