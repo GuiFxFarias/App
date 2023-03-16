@@ -35,9 +35,9 @@ export default function Home() {
 
       <Balance saldo="9,323.70" gastos="442.10" />
 
-      <Text style={styles.tittle}>Ultimas movimentações</Text>
-
       <Actions />
+
+      <Text style={styles.tittle}>Ultimas movimentações</Text>
 
       <FlatList
         style={styles.list}
@@ -57,6 +57,8 @@ const styles = StyleSheet.create({
   },
   tittle: {
     fontSize: 18,
+    borderBottomWidth: 0.5,
+    borderBottomColor: "#DADADA",
     fontWeight: "bold",
     marginLeft: 14,
     marginRight: 14,

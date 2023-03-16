@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useState } from "react";
+import * as Animatable from "react-native-animatable";
 
 export default function Movements({ data }) {
   const [show, setShow] = useState(false);
@@ -10,13 +11,13 @@ export default function Movements({ data }) {
         <Text style={styles.date}>{data.date}</Text>
 
         <View style={styles.content}>
-          <Text style={styles.label}>{data.label}</Text>
+          <Text  style={styles.label}>{data.label}</Text>
           {show === true ? (
-            <Text style={data.type === 1 ? styles.value : styles.expanse}>
+            <Animatable.Text animation='lightSpeedIn' style={data.type === 1 ? styles.value : styles.expanse}>
               {data.type === 1 ? `R$ ${data.value}` : `R$ -${data.value}`}
-            </Text>
+            </Animatable.Text>
           ) : (
-            <View style={styles.skeleton}></View>
+            <Animatable.View animation='lightSpeedIn' style={styles.skeleton}></Animatable.View>
           )}
         </View>
       </TouchableOpacity>

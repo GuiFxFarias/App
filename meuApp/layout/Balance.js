@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 
+import * as Animatable from "react-native-animatable";
+
 export default function Balance({ gastos, saldo }) {
   return (
     <>
-      <View style={styles.container}>
+      <Animatable.View style={styles.container} animation='flipInX'>
         <View style={styles.item}>
           <Text style={styles.itemTittle}>Saldo</Text>
           <View style={styles.content}>
@@ -19,7 +21,7 @@ export default function Balance({ gastos, saldo }) {
             <Text style={styles.expanses}>-{gastos}</Text>
           </View>
         </View>
-      </View>
+      </Animatable.View>
     </>
   );
 }

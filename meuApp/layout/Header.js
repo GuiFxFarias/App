@@ -8,6 +8,7 @@ import {
 } from "react-native";
 
 import { Feather } from "@expo/vector-icons";
+import * as Animatable from "react-native-animatable";
 
 const statusBarHeight = StatusBar.currentHeight
   ? StatusBar.currentHeight + 15
@@ -17,10 +18,14 @@ export default function Header({ name }) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.userName}>{name}</Text>
-        <TouchableOpacity activeOpacity={0.5} style={styles.buttonUser}>
-          <Feather name="user" size={30} color="white" />
-        </TouchableOpacity>
+        <Animatable.Text style={styles.userName} animation="fadeInLeft">
+          {name}
+        </Animatable.Text>
+        <Animatable.View animation="fadeInRight">
+          <TouchableOpacity activeOpacity={0.5} style={styles.buttonUser}>
+            <Feather name="user" size={30} color="white" />
+          </TouchableOpacity>
+        </Animatable.View>
       </View>
     </View>
   );
